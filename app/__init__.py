@@ -13,9 +13,9 @@ app = Flask(__name__)
 def hello():
     return "Hello, World!"
 
-@app.route("/yoback", methods=["GET","POST"])
+@app.route("/yoback", methods=["GET"])
 def yoback():
-    user = request.form['username']
+    user = request.args.get('username')
     requests.post(
         'http://api.justyo.co/yo/',
         data = {'api_token': yoback_token, 'username': user}
