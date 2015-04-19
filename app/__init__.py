@@ -3,9 +3,6 @@ from __future__ import unicode_literals
 from flask import Flask
 from flask import request
 from flask import json
-import requests
-
-from consts import yoback_token
 
 app = Flask(__name__)
 
@@ -13,11 +10,4 @@ app = Flask(__name__)
 def hello():
     return "Hello, World!"
 
-@app.route("/yoback", methods=["GET"])
-def yoback():
-    user = request.args.get('username')
-    requests.post(
-        'http://api.justyo.co/yo/',
-        data = {'api_token': yoback_token, 'username': user}
-    )
-    return("OK")
+import yoback
