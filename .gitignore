@@ -1,0 +1,5 @@
+*.pyc
+.*.sw[p-s]
+*.sw[p-s]
+__pycache__/
+app.yaml

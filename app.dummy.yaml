@@ -1,0 +1,14 @@
+application: app_id
+version: 0
+runtime: python27
+api_version: 1
+threadsafe: false
+
+libraries:
+- name: jinja2
+  version: "2.6"
+
+handlers:
+- url: .*
+  script: main.app
+
