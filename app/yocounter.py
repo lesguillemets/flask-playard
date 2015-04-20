@@ -33,7 +33,7 @@ def countup():
         n = user_record.count
         last_yo = user_record.last_yoed
         user_record.count += 1
-        if n+1 % 10 == 0:
+        if (n+1) % 10 == 0:
             notify_user(user)
         user_record.put()
         return ("This is the " + str(n) + " th yo, " + user + ".\n"
