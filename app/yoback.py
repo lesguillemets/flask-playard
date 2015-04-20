@@ -7,8 +7,11 @@ from app import app
 @app.route("/yoback", methods=["GET"])
 def yoback():
     user = request.args.get('username')
-    requests.post(
+    p = requests.post(
         'http://api.justyo.co/yo/',
         data = {'api_token': yoback_token, 'username': user}
     )
-    return("OK")
+    if p.ok:
+        return("OK")
+    else:
+        return p.status_code
