@@ -36,8 +36,8 @@ def countup():
         if (n+1) % 10 == 0:
             notify_user(user)
         user_record.put()
-        return ("This is the " + str(n) + " th yo, " + user + ".\n"
-                "You Last Yoed me " + str(last_yo) + "UTC."
+        return ("This is the {}th/st/nd yo, {}.\n".format(n, user) +
+                "You Last Yoed me {} UTC.".format(last_yo)
                 )
 
 def notify_user(username):
@@ -61,7 +61,7 @@ def show_yo_count(username):
         return "You haven't yoed me yet."
     else:
         user_record = user_records[0]
-        return ("You've yoed me " + str(user_record.count) + " times.")
+        return ("You've yoed me {} times.".format(user_record.count))
 
 def create_user(username):
     user = CountedYoer(
